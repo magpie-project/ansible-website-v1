@@ -30,35 +30,17 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							{{!-- <li>
-								<a href="#">Get Involved</a>
-								<ul>
-									<li><a href="#">Volunteer</a></li>
-									<li><a href="#">Join A Team</a></li>
-									<li>
-										<a href="#">Sed consequat</a>
-										<ul>
-											<li><a href="#">Lorem dolor</a></li>
-											<li><a href="#">Amet consequat</a></li>
-											<li><a href="#">Magna phasellus</a></li>
-											<li><a href="#">Etiam nisl</a></li>
-											<li><a href="#">Sed feugiat</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Nisl tempus</a></li>
-								</ul>
-							</li> --}}
-							<li><a href="#">Impact</a></li>
-							<li><a href="#">Members</a></li>
-							<li><a href="#">Features</a></li>
-							<li><a href="#">Join</a></li>
+							<li data-id="impact"><a href="#">Impact</a></li>
+							<li data-id="features"><a href="#">Features</a></li>
+							<li data-id="members"><a href="#">Members</a></li>
+							<li data-id="join"><a href="#">Join</a></li>
 						</ul>
 					</nav>
 			</div>
 		</div>
 
 	<!-- Impact -->
-		<div id="intro-wrapper" class="wrapper style1">
+		<div id="intro-wrapper" class="wrapper style1" data-anchor="impact">
 			<div class="title">Impact</div>
 			<section id="intro" class="container">
 				<p class="style1">
@@ -82,7 +64,7 @@
 		</div>
 
 	<!-- Features -->
-		<div class="wrapper style2">
+		<div class="wrapper style2"  data-anchor="features">
 			<div class="title">Features</div>
 				<div id="main" class="container">
 					<section id="features">
@@ -145,7 +127,7 @@
 		</div>
 
 	<!-- Members -->
-		<div class="wrapper style3">
+		<div class="wrapper style3" data-anchor="members">
 			<div class="title">Members</div>
 			<div id="highlights" class="container">
 

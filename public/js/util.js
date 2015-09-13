@@ -16,12 +16,14 @@
 				indent = Math.max(0, $this.parents('li').length - 1),
 				href = $this.attr('href'),
 				target = $this.attr('target');
+				dataId = $this.parent().attr('data-id');
 
 			b.push(
 				'<a ' +
 					'class="link depth-' + indent + '"' +
 					( (typeof target !== 'undefined' && target != '') ? ' target="' + target + '"' : '') +
 					( (typeof href !== 'undefined' && href != '') ? ' href="' + href + '"' : '') +
+					( (typeof dataId !== 'undefined' && dataId != '') ? ' data-id="' + dataId + '"' : '') +
 				'>' +
 					'<span class="indent-' + indent + '"></span>' +
 					$this.text() +
@@ -31,7 +33,6 @@
 		});
 
 		return b.join('');
-
 	};
 
 	/**
@@ -52,7 +53,6 @@
 					$(this[i]).panel(userConfig);
 
 				return $this;
-
 			}
 
 		// Vars.
@@ -69,13 +69,13 @@
 					delay: 0,
 
 				// Hide panel on link click.
-					hideOnClick: false,
+					hideOnClick: true,
 
 				// Hide panel on escape keypress.
-					hideOnEscape: false,
+					hideOnEscape: true,
 
 				// Hide panel on swipe.
-					hideOnSwipe: false,
+					hideOnSwipe: true,
 
 				// Reset scroll position on hide.
 					resetScroll: false,

@@ -24,7 +24,7 @@
 		{{{ body }}}
 
 		<!-- Footer -->
-		<div id="footer-wrapper" class="wrapper">
+		<div id="footer-wrapper" class="wrapper" data-anchor="join">
 			<div class="title">Join</div>
 			<div id="footer" class="container">
 				<header class="style1">
@@ -81,6 +81,22 @@
 		<script src="/js/util.js"></script>
 		<!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
 		<script src="/js/main.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// smooth scroll nav items
+				$('#nav li, #navPanel a').on('click', function(e){
+					var id = $(this).attr('data-id');
+					var destination = $('div[data-anchor='+id+']');
+					
+					$('html,body').animate({
+						scrollTop: $(destination).offset().top - 80
+					}, 500);
+
+					// return false;
+				});
+			});
+		</script>
 		
 		{{{block "scripts"}}}
 
