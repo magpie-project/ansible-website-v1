@@ -19,7 +19,7 @@ module.exports = function( server ) {
 			    replyTo: req.body.name+' <'+req.body.email+'>',
 			    to: 'info@ansiblenetwork.org',
 			    subject: 'Member Network Request: '+req.body.name,
-			    text: sanitizeHtml(req.body.message);
+			    text: sanitizeHtml(req.body.message)
 			};
 
 			transporter.sendMail(mailOptions, function(error, info){
