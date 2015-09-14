@@ -964,6 +964,12 @@ form :-ms-input-placeholder {
   font-style: italic; }
 form ::-moz-focus-inner {
   border: 0; }
+form span.success {
+  font-size: 1.3em;
+  color: white; }
+form span.error {
+  font-size: 1.3em;
+  color: #c35a5a; }
 
 /* Section/Article */
 section,

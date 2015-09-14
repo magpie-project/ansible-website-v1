@@ -231,6 +231,18 @@
 		::-moz-focus-inner {
 			border: 0;
 		}
+
+		span {
+			&.success {
+				font-size: 1.3em;
+				color: white;
+			}
+
+			&.error {
+				font-size: 1.3em;
+				color: #c35a5a;
+			}
+		}
 	}
 
 /* Section/Article */

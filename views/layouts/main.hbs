@@ -37,13 +37,13 @@
 
 						<!-- Contact Form -->
 							<section>
-								<form method="post" action="#">
+								<form>
 									<div class="row 50%">
 										<div class="6u 12u(mobile)">
 											<input type="text" name="name" id="contact-name" placeholder="Name" />
 										</div>
 										<div class="6u 12u(mobile)">
-											<input type="text" name="email" id="contact-email" placeholder="Email" />
+											<input type="email" name="email" id="contact-email" placeholder="Email" />
 										</div>
 									</div>
 									<div class="row 50%">
@@ -56,6 +56,7 @@
 											<ul class="actions">
 												<li><input type="submit" class="style1" value="Send" /></li>
 												<li><input type="reset" class="style2" value="Reset" /></li>
+												<li><span id="form-response" class=""></span></li>
 											</ul>
 										</div>
 									</div>
@@ -72,7 +73,7 @@
 				</ul>
 			</div>
 		</div>
-		
+
 		<!-- Scripts -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="/js/jquery.dropotron.min.js"></script>
@@ -84,20 +85,30 @@
 
 		<script type="text/javascript">
 			$(document).ready(function(){
-				// smooth scroll nav items
 				$('#nav li, #navPanel a').on('click', function(e){
 					var id = $(this).attr('data-id');
 					var destination = $('div[data-anchor='+id+']');
-					
+
 					$('html,body').animate({
 						scrollTop: $(destination).offset().top - 80
 					}, 500);
 
 					// return false;
 				});
+
+				$('form input[type=submit]').on('click', function(e){
+					e.preventDefault();
+					e.stopPropagation();
+
+					$.post( "/contact", $('form').serialize(), function(result) {
+					  $('#form-response').addClass(result.status).text(result.details);
+					});
+
+					return false;
+				})
 			});
 		</script>
-		
+
 		{{{block "scripts"}}}
 
 	</body>
