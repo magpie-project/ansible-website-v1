@@ -887,6 +887,8 @@ sup {
 
 br.clear {
   clear: both; }
+br.mobile-hide {
+  display: none; }
 
 p, ul, ol, dl, table, blockquote, form {
   margin-bottom: 2em; }
